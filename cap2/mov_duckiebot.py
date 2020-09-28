@@ -64,8 +64,19 @@ while True:
         action = np.array([0.44, 0.0])
 
     ### AGREGAR MÁS COMPORTAMIENTOS ###
+    if key == ord('s'):
+        action = np.array([-0.44, 0.0]) #retroceder a la misma velocidad que como avanza
+    
+    # DOBLAR: velocidad angular igual a la velocidad lineal
+    if key == ord('d'):
+        action = np.array([0.44, -0.44]) 
 
-
+    if key == ord('a'):
+        action = np.array([0.44, 0.44])
+    
+    # MODO TURBO
+    if key == ord('t'):
+        action = np.array([1.0, 0.0])
 
     # Se ejecuta la acción definida anteriormente y se retorna la observación (obs),
     # la evaluación (reward), etc
